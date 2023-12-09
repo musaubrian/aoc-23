@@ -1,29 +1,18 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"log"
-	"os"
 	"strconv"
 	"unicode"
+
+	"github.com/musaubrian/aoc-23/utils"
 )
 
 func main() {
-	var vals []string
 	var largerArr [][]string
 	var ttl int
+	vals := utils.ReadFile("input.txt")
 
-	f, err := os.Open("input.txt")
-	defer f.Close()
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	sc := bufio.NewScanner(f)
-	for sc.Scan() {
-		vals = append(vals, sc.Text())
-	}
 	for _, v := range vals {
 		var nums []string
 		for _, r := range v {
